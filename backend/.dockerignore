@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+uploads/
+generated_pdfs/
+.venv/
+venv/
+.git/

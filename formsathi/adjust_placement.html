@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adjust Placement | FormSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="adjust-placement">
+  <div class="page-shell">
+    <header class="site-header glass-panel">
+      <div class="brand-lockup">
+        <div class="brand-mark">FS</div>
+        <div>
+          <p class="eyebrow">Fine Tune Placement</p>
+          <h1>Adjust Filled Values</h1>
+        </div>
+      </div>
+      <nav class="menu-bar">
+        <a class="menu-link" href="index.html">Home</a>
+        <a class="menu-link" href="upload.html">Upload Form</a>
+        <a class="menu-link" href="pdf_editor.html">Form Editor</a>
+        <a class="menu-link" href="create_form.html">Create Form</a>
+        <a class="menu-link" href="known_forms.html">Known Forms</a>
+        <a class="menu-link" href="document_checklist.html">Document Checklist</a>
+      </nav>
+    </header>
+
+    <main class="flow-layout">
+      <section class="card progress-card">
+        <div class="progress-steps">
+          <div class="step completed">Upload Form</div>
+          <div class="step completed">Detect Fields</div>
+          <div class="step completed">Fill Form</div>
+          <div class="step completed">Add Signature</div>
+          <div class="step active">Adjust Placement</div>
+        </div>
+      </section>
+
+      <section class="editor-layout">
+        <aside class="card editor-sidebar">
+          <div class="tool-group">
+            <p class="eyebrow">Why This Step Helps</p>
+            <p class="muted small-text">If any value is slightly off, drag it directly on the original form. Your updated positions will be used for the final PDF.</p>
+          </div>
+
+          <div class="tool-group">
+            <p class="eyebrow">Tips</p>
+            <ul class="info-list small-text">
+              <li>Drag any filled text to align it with the form line.</li>
+              <li>Drag the signature box if it needs a better spot.</li>
+              <li>Use reset if you want to return to the detected placement.</li>
+            </ul>
+          </div>
+
+          <div class="tool-group">
+            <p class="eyebrow">Actions</p>
+            <div class="editor-actions">
+              <button id="resetPlacementButton" class="secondary-button" type="button">Reset Placement</button>
+              <button id="continueToPreviewButton" class="primary-button" type="button">Continue to Preview</button>
+            </div>
+          </div>
+
+          <p id="adjustPlacementStatus" class="muted small-text">Loading your original form...</p>
+          <p id="adjustPlacementError" class="error-text hidden"></p>
+        </aside>
+
+        <section class="card editor-workspace">
+          <div class="preview-toolbar">
+            <div>
+              <h3>Drag text or signature to the right place</h3>
+              <p class="muted">This step does not change your values. It only fine-tunes their positions before PDF generation.</p>
+            </div>
+          </div>
+          <div id="adjustPlacementPages" class="pdf-editor-pages">
+            <div class="editor-empty-state">Preparing the placement view...</div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/adjust_placement.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

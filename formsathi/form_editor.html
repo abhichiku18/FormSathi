@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Editor | FormSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="editor">
+  <div class="page-shell">
+    <header class="site-header glass-panel">
+      <div class="brand-lockup">
+        <div class="brand-mark">FS</div>
+        <div>
+          <p class="eyebrow">Step 3</p>
+          <h1>Fill Detected Fields</h1>
+        </div>
+      </div>
+      <nav class="menu-bar">
+        <a class="menu-link" href="index.html">Home</a>
+        <a class="menu-link" href="upload.html">Upload Form</a>
+        <a class="menu-link" href="pdf_editor.html">Form Editor</a>
+        <a class="menu-link" href="create_form.html">Create Form</a>
+        <a class="menu-link" href="known_forms.html">Known Forms</a>
+        <a class="menu-link" href="document_checklist.html">Document Checklist</a>
+      </nav>
+    </header>
+
+    <main class="flow-layout">
+      <section class="card progress-card">
+        <div class="progress-steps">
+          <div class="step completed">Upload Form</div>
+          <div class="step completed">Detect Fields</div>
+          <div class="step active">Fill Form</div>
+          <div class="step">Add Signature</div>
+          <div class="step">Download PDF</div>
+        </div>
+      </section>
+
+      <section class="card editor-card">
+        <div class="editor-header">
+          <div>
+            <h2>Dynamic Form Editor</h2>
+            <p class="muted">Labels will update automatically when you switch languages.</p>
+          </div>
+          <label class="language-select">
+            <span>Language</span>
+            <select id="languageSelector">
+              <option value="English">English</option>
+              <option value="Hindi">Hindi</option>
+              <option value="Bengali">Bengali</option>
+              <option value="Tamil">Tamil</option>
+              <option value="Marathi">Marathi</option>
+            </select>
+          </label>
+        </div>
+
+        <form id="dynamicForm" class="dynamic-form"></form>
+
+        <div class="editor-actions">
+          <button id="continueButton" class="primary-button" type="button">Continue to Signature</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/form.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

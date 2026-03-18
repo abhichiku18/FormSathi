@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Editor | FormSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="pdf-editor">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-lockup">
+        <div class="brand-mark">FS</div>
+        <div>
+          <p class="eyebrow">Manual PDF Tools</p>
+          <h1>Form Editor</h1>
+        </div>
+      </div>
+      <nav class="menu-bar">
+        <a class="menu-link" href="index.html">Home</a>
+        <a class="menu-link" href="upload.html">Fill the Form</a>
+        <a class="menu-link active" href="pdf_editor.html">Form Editor</a>
+        <a class="menu-link" href="create_form.html">Create Form</a>
+        <a class="menu-link" href="known_forms.html">Known Forms</a>
+        <a class="menu-link" href="document_checklist.html">Documents</a>
+      </nav>
+    </header>
+
+    <main class="flow-layout">
+      <section class="card editor-hero-card">
+        <div>
+          <h2>Open a PDF or image and add text, highlights, or signature manually.</h2>
+          <p class="muted">This tool works like a lightweight form editor. Upload a PDF, JPG, JPEG, or PNG, click where you want to place text, drag to highlight, add your signature, and export the edited file as a PDF.</p>
+        </div>
+        <div class="portal-inline">
+          <button id="openEditorPdfButton" class="primary-button" type="button">Open File</button>
+          <input id="editorFileInput" type="file" accept=".pdf,application/pdf,.jpg,.jpeg,.png,image/jpeg,image/png" hidden>
+          <button id="refreshRenderedPreviewButton" class="secondary-button" type="button" disabled>Refresh Rendered Preview</button>
+          <button id="exportEditorButton" class="secondary-button" type="button" disabled>Export Edited PDF</button>
+          <select id="editorTranslationLanguage" class="editor-translation-select">
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Bengali">Bengali</option>
+            <option value="Tamil">Tamil</option>
+            <option value="Marathi">Marathi</option>
+          </select>
+          <button id="translatePdfButton" class="secondary-button" type="button" disabled>Translate Whole PDF</button>
+          <button id="clearTranslationButton" class="ghost-button" type="button">Clear Translation</button>
+        </div>
+        <p id="editorStatus" class="muted">Choose a PDF to begin.</p>
+        <p id="editorError" class="error-text hidden"></p>
+        <p id="translationStatus" class="muted hidden">Optional reading view only. Your original PDF and editor layout stay unchanged.</p>
+        <div id="translationResult" class="translation-result hidden"></div>
+      </section>
+
+      <section class="editor-layout">
+        <aside class="card editor-sidebar">
+          <div class="tool-group">
+            <p class="eyebrow">Tools</p>
+            <div class="tool-buttons">
+              <button class="secondary-button tool-button active" data-tool="text" type="button">Add Text</button>
+              <button class="secondary-button tool-button" data-tool="highlight" type="button">Highlight</button>
+              <button class="secondary-button tool-button" data-tool="signature" type="button">Signature</button>
+            </div>
+          </div>
+
+          <div class="tool-group">
+            <p class="eyebrow">Text Settings</p>
+            <label class="field-group">
+              <span>Font Size</span>
+              <input id="fontSizeInput" type="number" min="10" max="32" value="16">
+            </label>
+            <p class="muted small-text">Click anywhere on a page after choosing the text tool. You will be prompted to enter the text.</p>
+          </div>
+
+          <div class="tool-group">
+            <p class="eyebrow">Signature Pad</p>
+            <canvas id="editorSignatureCanvas" width="320" height="160"></canvas>
+            <div class="signature-actions">
+              <button id="clearEditorSignature" class="secondary-button" type="button">Clear</button>
+              <button id="saveEditorSignature" class="primary-button" type="button">Use Signature</button>
+            </div>
+            <p id="editorSignatureStatus" class="muted small-text">Draw a signature, save it, then click on the PDF where you want it.</p>
+          </div>
+
+          <div class="tool-group">
+            <p class="eyebrow">Annotations</p>
+            <div class="editor-actions">
+              <button id="undoAnnotationButton" class="secondary-button" type="button">Undo Last</button>
+              <button id="clearAnnotationsButton" class="ghost-button" type="button">Clear All</button>
+            </div>
+          </div>
+
+        </aside>
+
+        <section class="card editor-workspace">
+          <div class="preview-toolbar">
+            <div>
+              <h3 id="editorFileName">No PDF loaded</h3>
+              <p class="muted">Use the selected tool directly on the page. Refresh the rendered preview to see the exact PDF engine output before downloading.</p>
+            </div>
+          </div>
+          <div id="pdfEditorPages" class="pdf-editor-pages">
+            <div class="editor-empty-state">Upload a PDF to start editing.</div>
+          </div>
+
+          <aside id="floatingRenderedEditorPreviewCard" class="floating-render-card hidden">
+            <div class="floating-render-header">
+              <strong>Live Render</strong>
+              <span id="floatingRenderedEditorPreviewStatus" class="muted small-text">This corner preview uses the backend PDF renderer.</span>
+            </div>
+            <iframe id="floatingRenderedEditorPreviewFrame" title="Floating rendered edited PDF preview"></iframe>
+          </aside>
+
+          <div id="renderedEditorPreviewCard" class="preview-generated-card hidden">
+            <div class="preview-toolbar">
+              <div>
+                <h3>Rendered Output Preview</h3>
+                <p id="renderedEditorPreviewStatus" class="muted">This preview uses the same backend renderer as the downloaded PDF.</p>
+              </div>
+              <a id="downloadEditedPdfLink" class="secondary-button disabled-link" href="#" download>Open Rendered PDF</a>
+            </div>
+            <iframe id="renderedEditorPreviewFrame" title="Rendered edited PDF preview"></iframe>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/pdf_editor.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

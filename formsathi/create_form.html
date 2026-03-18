@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Form | FormSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="create-form">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-lockup">
+        <div class="brand-mark">FS</div>
+        <div>
+          <p class="eyebrow">Simple Builder</p>
+          <h1>Create Form</h1>
+        </div>
+      </div>
+      <nav class="menu-bar">
+        <a class="menu-link" href="index.html">Home</a>
+        <a class="menu-link" href="upload.html">Fill the Form</a>
+        <a class="menu-link" href="pdf_editor.html">Form Editor</a>
+        <a class="menu-link active" href="create_form.html">Create Form</a>
+        <a class="menu-link" href="known_forms.html">Known Forms</a>
+        <a class="menu-link" href="document_checklist.html">Document Checklist</a>
+      </nav>
+    </header>
+
+    <main class="create-form-layout">
+      <aside class="card create-form-sidebar">
+        <div class="tool-group">
+          <p class="eyebrow">Add Blocks</p>
+          <div id="builderBlockLibrary" class="builder-block-library"></div>
+        </div>
+
+        <div class="tool-group">
+          <p class="eyebrow">Edit Selected</p>
+          <div id="builderEditorEmpty" class="muted small-text">Select a block on the right to edit its text.</div>
+          <div id="builderEditorPanel" class="builder-editor-panel hidden">
+            <label class="field-group">
+              <span>Heading / Label</span>
+              <input id="builderBlockTitle" type="text">
+            </label>
+            <label class="field-group">
+              <span>Main Content</span>
+              <textarea id="builderBlockContent"></textarea>
+            </label>
+            <label id="builderDocumentsGroup" class="field-group hidden">
+              <span>Required Documents</span>
+              <textarea id="builderDocumentsInput" placeholder="One document per line"></textarea>
+            </label>
+            <div class="editor-actions">
+              <button id="moveBlockUp" class="secondary-button" type="button">Move Up</button>
+              <button id="moveBlockDown" class="secondary-button" type="button">Move Down</button>
+              <button id="removeBlock" class="ghost-button" type="button">Remove</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-group">
+          <p class="eyebrow">Export</p>
+          <label class="field-group">
+            <span>Template Name</span>
+            <input id="templateNameInput" type="text" placeholder="My Custom Form Template">
+          </label>
+          <div class="editor-actions">
+            <button id="downloadCreatedForm" class="primary-button" type="button">Download PDF</button>
+            <button id="saveCreatedTemplate" class="secondary-button" type="button">Save Template</button>
+            <button id="resetCreatedForm" class="ghost-button" type="button">Reset</button>
+          </div>
+          <p id="createFormStatus" class="muted small-text">Build your form on the right, then export it.</p>
+          <p id="createFormError" class="error-text hidden"></p>
+        </div>
+      </aside>
+
+      <section class="card create-form-workspace">
+        <div class="preview-toolbar">
+          <div>
+            <h2>Live Form Preview</h2>
+            <p class="muted">Click a block to edit it. Each type comes with its own built-in style automatically.</p>
+          </div>
+        </div>
+        <div class="builder-preview-shell">
+          <div id="builderPreviewPage" class="builder-preview-page"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/create_form.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

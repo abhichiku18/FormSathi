@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Known Forms | FormSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="known-forms">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-lockup">
+        <div class="brand-mark">FS</div>
+        <div>
+          <p class="eyebrow">Template Forms</p>
+          <h1>Known Forms</h1>
+        </div>
+      </div>
+      <nav class="menu-bar">
+        <a class="menu-link" href="index.html">Home</a>
+        <a class="menu-link" href="upload.html">Fill the Form</a>
+        <a class="menu-link" href="pdf_editor.html">Form Editor</a>
+        <a class="menu-link" href="create_form.html">Create Form</a>
+        <a class="menu-link active" href="known_forms.html">Known Forms</a>
+        <a class="menu-link" href="document_checklist.html">Document Checklist</a>
+      </nav>
+    </header>
+
+    <main class="flow-layout">
+      <section class="card checklist-hero">
+        <h2>Choose a known form for exact placement.</h2>
+        <p class="muted">These templates use pre-saved field positions, so values go directly to the correct places without OCR guesswork.</p>
+        <label class="language-select">
+          <span>Form Label Language</span>
+          <select id="knownFormsLanguage">
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Bengali">Bengali</option>
+            <option value="Tamil">Tamil</option>
+            <option value="Marathi">Marathi</option>
+          </select>
+        </label>
+        <p id="knownFormsStatus" class="muted small-text">Loading template forms...</p>
+        <p id="knownFormsError" class="error-text hidden"></p>
+      </section>
+
+      <section id="knownFormsGrid" class="known-forms-grid"></section>
+    </main>
+  </div>
+
+  <script src="js/known_forms.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

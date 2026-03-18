@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signature | FormSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="signature">
+  <div class="page-shell">
+    <header class="site-header glass-panel">
+      <div class="brand-lockup">
+        <div class="brand-mark">FS</div>
+        <div>
+          <p class="eyebrow">Step 4</p>
+          <h1>Add Signature</h1>
+        </div>
+      </div>
+      <nav class="menu-bar">
+        <a class="menu-link" href="index.html">Home</a>
+        <a class="menu-link" href="upload.html">Upload Form</a>
+        <a class="menu-link" href="pdf_editor.html">Form Editor</a>
+        <a class="menu-link" href="create_form.html">Create Form</a>
+        <a class="menu-link" href="known_forms.html">Known Forms</a>
+        <a class="menu-link" href="document_checklist.html">Document Checklist</a>
+      </nav>
+    </header>
+
+    <main class="flow-layout">
+      <section class="card progress-card">
+        <div class="progress-steps">
+          <div class="step completed">Upload Form</div>
+          <div class="step completed">Detect Fields</div>
+          <div class="step completed">Fill Form</div>
+          <div class="step active">Add Signature</div>
+          <div class="step">Download PDF</div>
+        </div>
+      </section>
+
+      <section class="card signature-card">
+        <h2>Draw your signature</h2>
+        <p class="muted">Use your mouse, stylus, or touch input to sign below.</p>
+        <canvas id="signatureCanvas" width="860" height="320"></canvas>
+        <div class="signature-actions">
+          <button id="clearSignature" class="secondary-button" type="button">Clear Signature</button>
+          <button id="saveSignature" class="primary-button" type="button">Save Signature</button>
+        </div>
+        <p id="signatureMessage" class="muted"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/signature.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

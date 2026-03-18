@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview & Download | FormSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="preview">
+  <div class="page-shell">
+    <header class="site-header glass-panel">
+      <div class="brand-lockup">
+        <div class="brand-mark">FS</div>
+        <div>
+          <p class="eyebrow">Step 5</p>
+          <h1>Preview & Download</h1>
+        </div>
+      </div>
+      <nav class="menu-bar">
+        <a class="menu-link" href="index.html">Home</a>
+        <a class="menu-link" href="upload.html">Upload Form</a>
+        <a class="menu-link" href="pdf_editor.html">Form Editor</a>
+        <a class="menu-link" href="create_form.html">Create Form</a>
+        <a class="menu-link" href="known_forms.html">Known Forms</a>
+        <a class="menu-link" href="document_checklist.html">Document Checklist</a>
+      </nav>
+    </header>
+
+    <main class="flow-layout">
+      <section class="card progress-card">
+        <div class="progress-steps">
+          <div class="step completed">Upload Form</div>
+          <div class="step completed">Detect Fields</div>
+          <div class="step completed">Fill Form</div>
+          <div class="step completed">Add Signature</div>
+          <div class="step active">Preview & Download</div>
+        </div>
+      </section>
+
+      <section class="card preview-card">
+        <div class="preview-toolbar">
+          <div>
+            <h2>Preview & Adjust</h2>
+            <p id="previewStatus" class="muted">Drag any value if it needs a better position, then generate the final PDF.</p>
+          </div>
+          <div class="preview-actions">
+            <button id="resetPlacementButton" class="secondary-button" type="button">Reset Placement</button>
+            <button id="downloadButton" class="primary-button" type="button">Generate & Download PDF</button>
+            <button id="restartButton" class="secondary-button" type="button">Start New Form</button>
+          </div>
+        </div>
+
+        <div id="previewPlacementPages" class="pdf-editor-pages">
+          <div class="editor-empty-state">Preparing your uploaded form preview...</div>
+        </div>
+        <p id="previewError" class="error-text hidden"></p>
+
+        <aside id="previewFloatingRenderCard" class="floating-render-card hidden">
+          <div class="floating-render-header">
+            <strong>Live Render</strong>
+            <span id="previewFloatingRenderStatus" class="muted small-text">Generate once to see the real PDF output here.</span>
+          </div>
+          <iframe id="previewFloatingRenderFrame" title="Live rendered PDF preview"></iframe>
+        </aside>
+
+        <div id="generatedPreviewCard" class="preview-generated-card hidden">
+          <div class="preview-toolbar">
+            <div>
+              <h3>Generated Output</h3>
+              <p class="muted">Your final PDF is ready below.</p>
+            </div>
+            <a id="downloadLink" class="secondary-button disabled-link" href="#" download>Open Generated PDF</a>
+          </div>
+          <iframe id="pdfViewer" title="Generated PDF preview"></iframe>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/preview.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

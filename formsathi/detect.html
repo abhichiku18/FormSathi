@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detect Fields | FormSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="detect">
+  <div class="page-shell">
+    <header class="site-header glass-panel">
+      <div class="brand-lockup">
+        <div class="brand-mark">FS</div>
+        <div>
+          <p class="eyebrow">Step 2</p>
+          <h1>Detecting Fields</h1>
+        </div>
+      </div>
+      <nav class="menu-bar">
+        <a class="menu-link" href="index.html">Home</a>
+        <a class="menu-link" href="upload.html">Upload Form</a>
+        <a class="menu-link" href="pdf_editor.html">Form Editor</a>
+        <a class="menu-link" href="create_form.html">Create Form</a>
+        <a class="menu-link" href="known_forms.html">Known Forms</a>
+        <a class="menu-link" href="document_checklist.html">Document Checklist</a>
+      </nav>
+    </header>
+
+    <main class="flow-layout">
+      <section class="card progress-card">
+        <div class="progress-steps">
+          <div class="step completed">Upload Form</div>
+          <div class="step active">Detect Fields</div>
+          <div class="step">Fill Form</div>
+          <div class="step">Add Signature</div>
+          <div class="step">Download PDF</div>
+        </div>
+      </section>
+
+      <section class="card detect-card">
+        <div class="scanner-animation">
+          <div class="scanner-frame">
+            <div class="scanner-line"></div>
+          </div>
+        </div>
+        <h2>Detecting form fields using AI...</h2>
+        <p id="detectStatus" class="muted">OCR extraction is complete. Preparing field suggestions now.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/detect.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

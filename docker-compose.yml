@@ -1,0 +1,20 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: formsathi-backend
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./formsathi
+    container_name: formsathi-frontend
+    depends_on:
+      - backend
+    ports:
+      - "5500:80"
+    restart: unless-stopped

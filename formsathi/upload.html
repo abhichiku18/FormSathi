@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Form | FormSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="upload">
+  <div class="page-shell">
+    <header class="site-header glass-panel">
+      <div class="brand-lockup">
+        <div class="brand-mark">FS</div>
+        <div>
+          <p class="eyebrow">Step 1</p>
+          <h1>Upload Your Form</h1>
+        </div>
+      </div>
+      <nav class="menu-bar">
+        <a class="menu-link" href="index.html">Home</a>
+        <a class="menu-link active" href="upload.html">Upload Form</a>
+        <a class="menu-link" href="pdf_editor.html">Form Editor</a>
+        <a class="menu-link" href="create_form.html">Create Form</a>
+        <a class="menu-link" href="known_forms.html">Known Forms</a>
+        <a class="menu-link" href="document_checklist.html">Document Checklist</a>
+      </nav>
+    </header>
+
+    <main class="flow-layout">
+      <section class="card progress-card">
+        <div class="progress-steps">
+          <div class="step active">Upload Form</div>
+          <div class="step">Detect Fields</div>
+          <div class="step">Fill Form</div>
+          <div class="step">Add Signature</div>
+          <div class="step">Download PDF</div>
+        </div>
+      </section>
+
+      <section class="card form-card">
+        <h2>Drag and drop a supported file</h2>
+        <p class="muted">Accepted formats: PDF, JPG, JPEG, PNG</p>
+
+        <div id="dropZone" class="drop-zone">
+          <input id="fileInput" type="file" accept=".pdf,.jpg,.jpeg,.png" hidden>
+          <div class="drop-content">
+            <p class="drop-title">Drop your form here</p>
+            <p>or</p>
+            <button id="browseButton" class="secondary-button" type="button">Browse Files</button>
+          </div>
+        </div>
+
+        <div id="previewCard" class="file-preview hidden">
+          <div class="preview-pane">
+            <img id="imagePreview" alt="Selected file preview" class="hidden">
+            <iframe id="pdfPreview" title="PDF preview" class="hidden"></iframe>
+          </div>
+          <div class="preview-meta">
+            <div>
+              <p class="preview-label">Selected File</p>
+              <h3 id="fileName">No file selected</h3>
+            </div>
+            <button id="removeFile" class="ghost-button danger-button" type="button">Remove</button>
+          </div>
+        </div>
+
+        <div class="upload-actions">
+          <button id="uploadButton" class="primary-button" type="button" disabled>Upload & Process</button>
+          <div id="loadingSpinner" class="loading-state hidden">
+            <div class="spinner"></div>
+            <p>Uploading and processing your form...</p>
+          </div>
+        </div>
+
+        <p id="uploadError" class="error-text hidden"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/upload.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

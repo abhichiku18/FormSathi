@@ -1,6 +1,6 @@
 # 🚀 FormSathi – AI-Powered Form & Document Automation with Chatbot & Multilingual Support
 
-![Banner](assets/banner.png)
+![Banner](assets/Banner.png)
 
 ---
 

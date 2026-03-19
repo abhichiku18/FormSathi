@@ -1,14 +1,14 @@
 # 🚀 FormSathi – AI-Powered Form & Document Automation with Chatbot & Multilingual Support
 
-![Banner](https://via.placeholder.com/1200x300?text=FormSathi+-+AI+Form+Automation)
+![Banner](assets/banner.png)
 
 ---
 
 ## 🧠 Overview
 
-**FormSathi** is an AI-powered document intelligence platform that simplifies how citizens interact with government forms.
+**FormSathi** is an AI-powered document intelligence platform that simplifies how users interact with complex forms and documents.
 
-It combines **OCR, LLM-based field detection, multilingual AI, and document automation** to transform complex government forms into **simple, guided, and error-free workflows**.
+It combines **OCR, LLM-based field detection, multilingual AI, and chatbot interaction** to transform traditional form filling into a **simple, guided, and error-free experience**.
 
 ---
 
@@ -17,11 +17,10 @@ It combines **OCR, LLM-based field detection, multilingual AI, and document auto
 Millions of users face:
 
 * ❌ Form rejection due to incorrect or incomplete data
-* 🌐 Language barriers (English / complex Hindi forms)
-* 🌍 Fake or unofficial websites
+* 🌐 Language barriers (English / complex forms)
 * 💸 Dependency on agents and extra costs
-* 📄 Lack of document awareness and eligibility knowledge
-* ⏳ Delays due to resubmission
+* 📄 Lack of document awareness
+* ⏳ Time-consuming manual processes
 
 ---
 
@@ -29,12 +28,13 @@ Millions of users face:
 
 FormSathi provides:
 
-* AI-based **form understanding**
-* Automatic **field detection and filling**
-* **Multilingual translation**
-* **Chatbot guidance**
-* **Digital signature and PDF generation**
-* **Official links and document checklist**
+* 🤖 AI-based **form understanding**
+* 🧾 Automatic **field detection & filling**
+* 🌐 **Multilingual translation**
+* 💬 **Chatbot-based guidance**
+* ✍️ Digital signature support
+* 📄 PDF generation & editing
+* 📋 Document checklist & guidance
 
 ---
 
@@ -42,16 +42,16 @@ FormSathi provides:
 
 * 📤 Upload Forms (PDF, JPG, PNG)
 * 🔍 OCR Text Extraction (Tesseract)
-* 🤖 AI Field Detection (Groq LLM)
+* 🤖 AI Field Detection (LLM-based)
 * 🧾 Dynamic Form Filling
 * 🌐 Multilingual Support (EN, HI, BN, TA, MR)
 * ✍️ Digital Signature
 * 📄 PDF Generation
-* 🧩 Known Form Templates (Exact Placement)
+* 🧩 Known Form Templates
 * 🛠️ Form Builder (Custom Templates)
 * 📝 PDF Editor + Translation
-* 🤖 Multilingual AI Chatbot
-* 📋 Document Checklist + Official Links
+* 💬 AI Chatbot Assistant
+* 📋 Document Checklist
 
 ---
 
@@ -67,41 +67,37 @@ User → Upload Form → OCR → AI Field Detection → Dynamic Form → User In
 
 ### 🏠 Home Page
 
-![Home](docs/images/home.png)
+![Home](assets/home.png)
 
-### 📤 Upload & AI Processing
+### 📤 Upload & Processing
 
-![Upload](docs/images/upload.png)
+![Upload](assets/upload_form.png)
 
 ### 🤖 AI Chatbot
 
-![Chatbot](docs/images/chatbot.png)
+![Chatbot](assets/chatbot.png)
 
-### 📋 Document Checklist
+### 📄 Document Handling
 
-![Checklist](docs/images/checklist.png)
-
-### 🧩 Known Forms
-
-![Known Forms](docs/images/known_forms.png)
+![Document](assets/document.png)
 
 ### 🛠️ Form Builder
 
-![Builder](docs/images/create_form.png)
+![Builder](assets/create-form.png)
 
-### 📝 PDF Editor
+### 📝 Form Editor
 
-![Editor](docs/images/form_editor.png)
+![Editor](assets/formeditor.png)
 
 ---
 
 ## 🎬 Demo
 
 🔗 **Live Demo:**
-👉 https://your-demo-link.com
+👉 (Add your deployed link here)
 
 🎥 **Demo Video:**
-👉 https://your-video-link.com
+👉 (Add your video link here)
 
 ---
 
@@ -120,8 +116,8 @@ User → Upload Form → OCR → AI Field Detection → Dynamic Form → User In
 ### AI / ML
 
 * Tesseract OCR
-* Groq API (LLM)
-* NLP Field Detection
+* LLM (Groq API / OpenAI)
+* NLP-based Field Detection
 
 ### Tools
 
@@ -133,12 +129,12 @@ User → Upload Form → OCR → AI Field Detection → Dynamic Form → User In
 
 ## 🔌 API Endpoints
 
-| Endpoint  | Method | Description   |
-| --------- | ------ | ------------- |
-| /upload   | POST   | Upload form   |
-| /ocr      | POST   | Extract text  |
-| /detect   | POST   | Detect fields |
-| /generate | POST   | Generate PDF  |
+| Endpoint  | Method | Description         |
+| --------- | ------ | ------------------- |
+| /upload   | POST   | Upload form         |
+| /ocr      | POST   | Extract text        |
+| /detect   | POST   | Detect fields       |
+| /generate | POST   | Generate filled PDF |
 
 ---
 
@@ -148,9 +144,7 @@ User → Upload Form → OCR → AI Field Detection → Dynamic Form → User In
 FormSathi/
 │── frontend/
 │── backend/
-│── models/
-│── utils/
-│── docs/images/
+│── assets/
 │── README.md
 ```
 
@@ -158,29 +152,29 @@ FormSathi/
 
 ## ⚠️ Challenges
 
-* OCR accuracy on low-quality forms
+* OCR accuracy on low-quality images
 * Handling multiple form formats
 * AI field detection consistency
-* Multilingual translation issues
+* Multilingual understanding
 
 ---
 
 ## 📈 Impact
 
 * ✅ Reduced form filling errors
-* ⚡ Faster application process
+* ⚡ Faster processing
 * 💰 Reduced dependency on agents
-* 🌍 Improved accessibility for rural users
+* 🌍 Improved accessibility
 
 ---
 
 ## 🚀 Future Scope
 
-* Voice-based form filling 🎤
-* Mobile application 📱
-* Handwritten OCR ✍️
-* Aadhaar integration 🔐
-* AI error correction system
+* 🎤 Voice-based form filling
+* 📱 Mobile application
+* ✍️ Handwritten OCR
+* 🔐 Secure document storage
+* 🤖 AI-based error correction
 
 ---
 
